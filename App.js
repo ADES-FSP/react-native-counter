@@ -7,12 +7,21 @@ import React, {useState} from 'react';
 import {View, StatusBar, Text, TextInput, Button} from 'react-native';
 
 function Counter(props) {
+  let [count, setCount] = useState(0);
   return (
     <View>
-      <Text>Hello</Text>
+      <Text>{count}</Text>
       <View>
-        <Button title="+"></Button>
-        <Button title="-"></Button>
+        <Button
+          title="+"
+          onPress={function () {
+            setCount(count + 1);
+          }}></Button>
+        <Button
+          title="-"
+          onPress={function () {
+            setCount(count - 1);
+          }}></Button>
       </View>
     </View>
   );
